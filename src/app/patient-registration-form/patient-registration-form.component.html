@@ -1,0 +1,99 @@
+<mat-card style="width: 100%; height:100%" class="my-card">
+    <mat-card-header>
+        <mat-card-title>Register Patient</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <form  class="my-form">
+            <mat-tab-group>
+                <mat-tab  label="General Information"  class="my-tab">
+                    <table  style="width: 70%"  cellspacing="10">
+                        <tr><!-- First row -->
+                            <td> 
+                                <mat-form-field>
+                                    <mat-label>Name</mat-label>
+                                    <input  matInput  placeholder="Name" [(ngModel)]="patientName"  name="patientName" required>
+                                </mat-form-field>
+                            </td>
+                            <td>
+                                <mat-checkbox [checked]="isDesexed">Is Desexed?</mat-checkbox> 
+                            </td>
+                            <td>
+                                <mat-form-field>
+                                        <mat-label>Caller</mat-label>
+                                        <input  matInput  placeholder="Caller" [(ngModel)]="callerName"  name="callerName">
+                                </mat-form-field>
+                            </td>
+                        </tr>
+                        <tr><!--Second Row-->
+                            <td>
+                                <mat-label>Gender</mat-label>
+                                <mat-radio-group [(value)]="selectedGender">
+                                    <mat-radio-button  value="male">Male</mat-radio-button>
+                                    <mat-radio-button  value="female">Female</mat-radio-button>
+                                </mat-radio-group>
+                           </td>
+                           <td>
+                                <mat-form-field>
+                                        <mat-label>Staff who picked up</mat-label>
+                                        <input  matInput  placeholder="Staff Name" [(ngModel)]="staffName"  name="staffName">
+                                </mat-form-field>
+                           </td>
+                           <td>
+                               <mat-form-field>
+                                    <mat-label>Phone</mat-label>
+                                    <input  matInput  placeholder="Phone" [(ngModel)]="callerPhone"  name="callerPhone">
+                                </mat-form-field>
+                            </td>
+                        </tr>
+                        <tr> <!--Third row-->
+                            <td>
+                                <mat-form-field>
+                                    <mat-label>Age</mat-label>
+                                    <input  matInput  placeholder="Age" [(ngModel)]="patientAge"  name="patientAge">
+                                </mat-form-field>
+                            </td>
+                            <td>
+                                <mat-form-field>
+                                        <mat-label>Location</mat-label>
+                                        <textarea [(ngModel)]="address"  matInput></textarea>
+                                </mat-form-field>
+                            </td>
+                        </tr>
+                        <tr><!--Fourth row-->
+                            <td>
+                                <mat-form-field>
+                                        <mat-label>Colour</mat-label>
+                                        <input  matInput  placeholder="Colour" [(ngModel)]="patientColour"  name="patientColour">
+                                </mat-form-field>
+                            </td>
+                            <td>
+                                <mat-form-field>
+                                        <mat-label>Breed</mat-label>
+                                        <input  matInput  placeholder="Breed" [(ngModel)]="patientBreed"  name="patientBreed">
+                                </mat-form-field>
+                            </td>
+                            <td>
+                                <mat-form-field>
+                                        <mat-label>Cause</mat-label>
+                                        <input  matInput  placeholder="Cause" [(ngModel)]="cause"  name="cause">
+                                </mat-form-field>
+                            </td>
+                        </tr>
+                    </table>
+                </mat-tab>
+                <mat-tab  label="Other Information"  class="my-tab">
+                    <table  style="width: 100%"  cellspacing="10">
+                        <tr>
+                            <td>
+                                <mat-checkbox [checked]="isCompany">Is company?</mat-checkbox> 
+                            </td>
+                        </tr>
+                    </table>
+                </mat-tab>
+            </mat-tab-group>
+        </form>
+    </mat-card-content>
+    <mat-card-actions>
+            <button  mat-raised-button (click)="registerPatient()"  color="primary">Submit</button>
+    </mat-card-actions>
+</mat-card>
